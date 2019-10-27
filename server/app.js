@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const expressHandlebars = require('express-handlebars');
 const session = require('express-session');
 
-const port = process.env.PORT || process.env.NODE_PORT || 3000;
+const port = process.env.PORT || process.env.NODE_PORT || 3000 process.env.MONGODB_URI;
 
 const dbURL = process.env.MONGODB_URI || 'mongodb://heroku_7xs8j43k:4938kdmb9t453s67hq370nduu8@ds239858.mlab.com:39858/heroku_7xs8j43k';
 
