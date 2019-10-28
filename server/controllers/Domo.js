@@ -15,7 +15,7 @@ const makerPage = (req, res) => {
 
 
 const makeDomo = (req, res) => {
-    if (ireq.body.name || !req.body.age) {
+    if (!req.body.name || !req.body.age) {
         return res.status(400).json({ error: 'RAWR! Both name and age are required' });
     }
     
