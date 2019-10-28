@@ -1,3 +1,7 @@
+const models = require('../models');
+
+const Domo = models.Domo;
+
 const makerPage = (req, res) => {
     Domo.DomoModel.findByOwner(req.session.account._id, (err, docs) => {
         if (err) {
@@ -9,9 +13,6 @@ const makerPage = (req, res) => {
     });
 };
 
-const models = require('../models');
-
-const Domo = models.Domo;
 
 const makeDomo = (req, res) => {
     if (ireq.body.name || !req.body.age) {
