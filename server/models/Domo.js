@@ -7,7 +7,7 @@ let DomoModel = {};
 //mongoose.Types.ObjectID is a function that
 //converts string ID to real monogo ID
 const convertId = mongoose.Types.ObjectId;
-const setName = (name) => _.escape(name).tirm();
+const setName = (name) => _.escape(name).trim();
 
 const DomoSchema = new mongoose.Schema({
     name: {
