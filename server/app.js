@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const expressHandlebars = require('express-handlebars');
 const session = require('express-session');
-const RedisStore = require('connect-redit')(session);
+const RedisStore = require('connect-redis')(session);
 const url = require('url');
 const csrf = require('csurf');
 
