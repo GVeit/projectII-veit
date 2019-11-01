@@ -31,7 +31,7 @@ let redisURL = {
 let redisPASS = '7N1BU9OhC44E3KlqYapJiLujVjnnc21n'; // your password from RedisLabs
 
 if (process.env.REDISCLOUD_URL) {
-    redisURL = url.parse(proess.env.REDISCLOUD_URL);
+    redisURL = url.parse(process.env.REDISCLOUD_URL);
     redisPASS = redisURL.auth.split(':')[1];
 }
 
@@ -53,7 +53,7 @@ app.use(session({
     store: new RedisStore({
         host: redisURL.hostname,
         port: redisURL.port,
-        pass: redisPass,
+        pass: redisPASS,
     }),
     secret: 'Domo Arigato',
     resave: true,
