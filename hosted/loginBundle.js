@@ -139,7 +139,7 @@ var getToken = function getToken() {
     }));
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
     getToken();
 });
 "use strict";
