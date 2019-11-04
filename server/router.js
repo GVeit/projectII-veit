@@ -2,6 +2,7 @@ const controllers = require('./controllers');
 const mid = require('./middleware');
 
 const router = (app) => {
+    app.get('/getToken', mid.requiresSecure, controllers.Account.getToken);
     app.get('/login', controllers.Account.loginPage);
     app.post('/login', controllers.Account.login);
     app.get('/signup', controllers.Account.signupPage);
