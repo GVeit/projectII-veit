@@ -134,7 +134,7 @@ var getToken = function getToken() {
         };
 
         return result;
-    }(function () {
+    }(function() {
         setup(result.csrfToken);
     }));
 };
