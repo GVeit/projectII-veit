@@ -10,6 +10,7 @@
   "scripts": {
     "buildLoginBundle": "babel ./client/login ./client/helper --presets react --out-file ./hosted/loginBundle.js",
     "buildAppBundle": "babel ./client/app ./client/helper --presets react --out-file ./hosted/bundle.js",
+    "buildBlackJackBundle": "babel ./client/blackJack ./client/helper --presets react --out-file ./hosted/blackJackBundle.js",
     "nodemon": "nodemon --watch ./server ./server/app.js",
     "start": "node ./server/app.js",
     "pretest": "eslint ./server --fix",
