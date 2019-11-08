@@ -80,7 +80,7 @@ const SignupWindow = (props) => {
 // BLACKJACK WINDOW
 const BlackJackWindow = (props) => {
     return (
-        <div>Black JCK</div>
+        <div>Black Jack</div>
     );
 };
 

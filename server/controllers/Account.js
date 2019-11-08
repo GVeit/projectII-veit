@@ -16,11 +16,11 @@ const logout = (req, res) => {
 };
 
 const addFunds = (req, res) => {
-  res.redirect('/addFunds');
+  res.render('addFunds');
 };
 
 const blackJack = (req, res) => {
-  res.redirect('/blackJack');
+  res.render('blackJack');
 };
 
 const login = (request, response) => {
