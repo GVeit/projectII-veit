@@ -80,7 +80,7 @@ const SignupWindow = (props) => {
 // BLACKJACK WINDOW
 const BlackJackWindow = (props) => {
     return (
-        <div>Black Jack</div>
+        <div>It works!</div>
     );
 };
 
@@ -101,7 +101,6 @@ const createSignupWindow = (csrf) => {
 // BLACKJACK WINDOW
 const createBlackJackWindow = (csrf) => {
     ReactDOM.render(
-        <SignupWindow csrf={csrf} />,
         document.querySelector("#game")
     );
 };
