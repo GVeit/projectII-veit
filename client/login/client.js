@@ -77,6 +77,13 @@ const SignupWindow = (props) => {
     );
 };
 
+// BLACKJACK WINDOW
+const BlackJackWindow = (props) => {
+    return (
+        <div>Black JCK</div>
+    );
+};
+
 const createLoginWindow = (csrf) => {
     ReactDOM.render(
         <LoginWindow csrf={csrf} />,
@@ -88,6 +95,14 @@ const createSignupWindow = (csrf) => {
     ReactDOM.render(
         <SignupWindow csrf={csrf} />,
         document.querySelector("#content")
+    );
+};
+
+// BLACKJACK WINDOW
+const createBlackJackWindow = (csrf) => {
+    ReactDOM.render(
+        <SignupWindow csrf={csrf} />,
+        document.querySelector("#game")
     );
 };
 
