@@ -19,6 +19,10 @@ const addFunds = (req, res) => {
   res.redirect('/addFunds');
 };
 
+const blackJack = (req, res) => {
+  res.redirect('/blackJack');
+};
+
 const login = (request, response) => {
   const req = request;
   const res = response;
@@ -103,6 +107,7 @@ module.exports.loginPage = loginPage;
 module.exports.login = login;
 module.exports.logout = logout;
 module.exports.addFunds = addFunds;
+module.exports.blackJack = blackJack;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
 module.exports.getToken = getToken;

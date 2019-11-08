@@ -22,6 +22,16 @@ const requiresaddFunds = (req, res, next) => {
 };
 
 
+const requiresblackJack = (req, res, next) => {
+  if (req.session.account) {
+    return res.redirect('/blackJack');
+  }
+
+  return next();
+};
+
+
+
 const requiresSecure = (req, res, next) => {
   if (req.headers['x-forwarded-proto'] !== 'https') {
     return res.redirect(`https://${req.hostname}${req.url}`);
@@ -36,6 +46,7 @@ const bypassSecure = (req, res, next) => {
 module.exports.requiresLogin = requiresLogin;
 module.exports.requiresLogout = requiresLogout;
 module.exports.requiresaddFunds = requiresaddFunds;
+module.exports.requiresblackJack = requiresblackJack;
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.requiresSecure = requiresSecure;
