@@ -15,6 +15,10 @@ const logout = (req, res) => {
   res.redirect('/');
 };
 
+const addFunds = (req, res) => {
+  res.redirect('/addFunds');
+};
+
 const login = (request, response) => {
   const req = request;
   const res = response;
@@ -98,6 +102,7 @@ const getToken = (request, response) => {
 module.exports.loginPage = loginPage;
 module.exports.login = login;
 module.exports.logout = logout;
+module.exports.addFunds = addFunds;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
 module.exports.getToken = getToken;
