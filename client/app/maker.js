@@ -77,8 +77,6 @@ const setup = function(csrf) {
         <DomoList domos={[]} />, document.querySelector("#domos")
     );
     
-        <DomoList domos={[]} />, document.querySelector("#domos")
-    );
     
     loadDomosFromServer();
 };

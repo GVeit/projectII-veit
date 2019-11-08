@@ -96,6 +96,14 @@ var SignupWindow = function SignupWindow(props) {
     );
 };
 
+/*
+// BLACKJACK WINDOW
+const BlackJackWindow = (props) => {
+    return (
+        <div>It works!</div>
+    );
+};
+*/
 var createLoginWindow = function createLoginWindow(csrf) {
     ReactDOM.render(React.createElement(LoginWindow, { csrf: csrf }), document.querySelector("#content"));
 };
@@ -104,6 +112,16 @@ var createSignupWindow = function createSignupWindow(csrf) {
     ReactDOM.render(React.createElement(SignupWindow, { csrf: csrf }), document.querySelector("#content"));
 };
 
+/*
+// BLACKJACK WINDOW
+const createBlackJackWindow = (csrf) => {
+    ReactDOM.render(
+        <BlackJackWindow csrf={csrf} />,
+        document.querySelector("#game")
+    );
+};
+
+*/
 var setup = function setup(csrf) {
     var loginButton = document.querySelector("#loginButton");
     var signupButton = document.querySelector("#signupButton");
@@ -124,22 +142,12 @@ var setup = function setup(csrf) {
 };
 
 var getToken = function getToken() {
-    sendAjax('GET', '/getToken', null, result = function (_result) {
-        function result() {
-            return _result.apply(this, arguments);
-        }
-
-        result.toString = function () {
-            return _result.toString();
-        };
-
-        return result;
-    }(function() {
+    sendAjax('GET', '/getToken', null, function (result) {
         setup(result.csrfToken);
-    }));
+    });
 };
 
-$(document).ready(function() {
+$(document).ready(function () {
     getToken();
 });
 "use strict";
@@ -161,7 +169,7 @@ var sendAjax = function sendAjax(type, action, data, success) {
         url: action,
         data: data,
         dataType: "json",
-        sucess: success,
+        success: success,
         error: function error(xhr, status, _error) {
             var messageObj = JSON.parse(xhr.responseText);
             handleError(messageObj.error);
