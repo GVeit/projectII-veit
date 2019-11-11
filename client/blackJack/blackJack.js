@@ -295,6 +295,7 @@ function hit() {
     
     if (suit == 'hearts'){
         icon='&hearts;';
+        div.style.color = "red"
         console.log("Hearts" + valueOfCard);
     }
     else if (suit == 'spades'){
