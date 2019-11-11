@@ -287,7 +287,6 @@ function hit() {
     player.cards.push(deckArray[totalCardsPulled]);
     player.score = getCard(player.cards);
     //document.getElementById("player-cards").innerHTML = "Player Cards: " + JSON.stringify(player.cards);
-    document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
 
 
     totalCardsPulled += 1;
@@ -318,6 +317,8 @@ function hit() {
 
     document.getElementById("player-cards").innerHTML = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
     playerHand = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
+    
+    document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
 }
 
 function stand() {
