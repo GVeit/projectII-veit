@@ -34,9 +34,9 @@ const setup = function(csrf) {
 
 var userMoney = 0;
 
-document.getElementById("confirm-purchase").addEventListener("click", function(){
-  document.getElementById("credit").innerHTML = userMoney;
-});
+//document.getElementById("confirm-purchase").addEventListener("click", function(){
+//  document.getElementById("credit").innerHTML = userMoney;
+//});
 
 var totalCardsPulled = 0;
 var deckArray = [];
