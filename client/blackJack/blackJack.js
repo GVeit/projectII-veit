@@ -291,17 +291,8 @@ function hit() {
     var icon = '';
     var suit = player.cards[player.cards.length-1].icon
     var valueOfCard = player.cards[player.cards.length-1].rank
-
-    totalCardsPulled += 1;
-    if (totalCardsPulled > 2) {
-        endGame();
-        
-        document.getElementById("player-cards").innerHTML = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
-        playerHand = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
-        document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
-        
-    }
-
+    
+    
     if (suit == 'hearts'){
         icon='&hearts;';
         console.log("&hearts" + valueOfCard);
@@ -318,11 +309,19 @@ function hit() {
         icon = '&clubs;';
         console.log("Clubs" + valueOfCard);
     }
-
-    document.getElementById("player-cards").innerHTML = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
-    playerHand = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
     
-    document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
+
+    totalCardsPulled += 1;
+    if (totalCardsPulled > 2) {
+        document.getElementById("player-cards").innerHTML = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
+        
+        playerHand = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
+    
+        document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
+        
+        endGame();
+    }
+
 }
 
 function stand() {
