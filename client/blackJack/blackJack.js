@@ -288,6 +288,9 @@ function hit() {
     player.score = getCard(player.cards);
     //document.getElementById("player-cards").innerHTML = "Player Cards: " + JSON.stringify(player.cards);
 
+    var icon = '';
+    var suit = player.cards[player.cards.length-1].icon
+    var valueOfCard = player.cards[player.cards.length-1].rank
 
     totalCardsPulled += 1;
     if (totalCardsPulled > 2) {
@@ -298,10 +301,6 @@ function hit() {
         document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
         
     }
-
-    var icon = '';
-    var suit = player.cards[player.cards.length-1].icon
-    var valueOfCard = player.cards[player.cards.length-1].rank
 
     if (suit == 'hearts'){
         icon='&hearts;';
