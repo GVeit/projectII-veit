@@ -25,7 +25,33 @@
     
     
     <div class="addFunds">
-        Add Funds
+        
+        <form id="userCreditForm" name="userCreditForm" action="/updateCredit" method="POST" class="domoForm col s12 m6 l4">
+            <h2 class="formHead">Add Funds</h2>
+            
+
+            
+            <div class="input-field">
+                 <input type="number" id="creditUpdate" name="credit" class="validate">
+                <label>Credits: </label>
+                <input type="number" disabled="" id="creditUpdate" name="card">
+                <label>Card Number: </label>
+            </div>
+            
+            <div class="input-field">
+                <input type="text" disabled="" id="creditUpdate" name="name">
+                <label>Name on card: </label>
+            </div>
+            
+            <div class="input-field">
+                <input type="text" disabled="" id="creditUpdate" name="date">
+                <label>Experation date: </label>
+            </div>
+            
+                <input type="hidden" name="_csrf" value="tFyOL9Ae-um42HgHLCdweOO1Yj4_D7hrIQwE">
+                <input type="submit" class="" value="Add Funds">
+        </form>
+        
     </div>
         
     
