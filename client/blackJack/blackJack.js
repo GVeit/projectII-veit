@@ -295,11 +295,11 @@ function hit() {
     
     if (suit == 'hearts'){
         icon='&hearts;';
-        console.log("&hearts" + valueOfCard);
+        console.log("Hearts" + valueOfCard);
     }
     else if (suit == 'spades'){
         icon = '&spades;';
-        console.log("&spades" + valueOfCard);
+        console.log("Spades" + valueOfCard);
     }
     else if (suit == 'diamonds'){
         icon = '&diams;';
