@@ -310,15 +310,15 @@ function hit() {
         console.log("Clubs" + valueOfCard);
     }
     
+    document.getElementById("player-cards").innerHTML = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
+        
+    playerHand = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
+    
+    document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
+    
 
     totalCardsPulled += 1;
     if (totalCardsPulled > 2) {
-        document.getElementById("player-cards").innerHTML = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
-        
-        playerHand = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
-    
-        document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
-        
         endGame();
     }
 
