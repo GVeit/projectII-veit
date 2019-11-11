@@ -292,6 +292,11 @@ function hit() {
     totalCardsPulled += 1;
     if (totalCardsPulled > 2) {
         endGame();
+        
+        document.getElementById("player-cards").innerHTML = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
+        playerHand = playerHand + '<div>' + valueOfCard + '<br/>' + icon + '</div>';
+        document.getElementById("player-score").innerHTML = "Player Score: " + player.score;
+        
     }
 
     var icon = '';
