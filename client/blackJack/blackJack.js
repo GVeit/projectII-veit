@@ -32,13 +32,18 @@ const setup = function(csrf) {
 
 };
 
+var userMoney = 0;
+
+document.getElementById("confirm-purchase").addEventListener("click", function(){
+  document.getElementById("credit").innerHTML = userMoney;
+});
 
 var totalCardsPulled = 0;
 var deckArray = [];
 var player = {
         cards: [],
         score: 0,
-        money: 100
+        money: userMoney
     };
 var playerHand = '';
 
@@ -47,6 +52,7 @@ var dealer = {
     score: 0
 };
 var dealerHand = '';
+
 
 document.getElementById("player").innerHTML = "Your money: $" + player.money;
 document.getElementById("hit-button").disabled = true;
