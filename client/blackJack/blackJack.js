@@ -32,7 +32,7 @@ const setup = function(csrf) {
 
 };
 
-var userMoney = 0;
+var userMoney = 100;
 
 //document.getElementById("confirm-purchase").addEventListener("click", function(){
 //  document.getElementById("credit").innerHTML = userMoney;
