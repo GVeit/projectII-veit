@@ -10,8 +10,9 @@ const router = (app) => {
   app.post('/signup', controllers.Account.signup);
   app.get('/logout', controllers.Account.logout);
   app.get('/addFunds', controllers.Account.addFunds);
+  app.post('/addFunds', controllers.Account.increaseMoney);
+  app.get('/getFunds', controllers.Account.getFunds);
   app.get('/blackJack', controllers.Account.blackJack);
-  app.get('/addFunds', controllers.Account.addFunds);
   app.get('/maker', controllers.Domo.makerPage);
   app.post('/maker', controllers.Domo.make);
   app.get('/', controllers.Account.loginPage);

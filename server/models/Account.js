@@ -28,6 +28,11 @@ const AccountSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  fund: {
+      type: Number,
+      required: true,
+      default: 0
+  }
 });
 
 AccountSchema.statics.toAPI = doc => ({
@@ -50,6 +55,7 @@ const validatePassword = (doc, password, callback) => {
 AccountSchema.statics.findByUsername = (name, callback) => {
   const search = {
     username: name,
+
   };
 
   return AccountModel.findOne(search, callback);

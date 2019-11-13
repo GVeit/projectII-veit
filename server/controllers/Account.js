@@ -19,6 +19,35 @@ const addFunds = (req, res) => {
   res.render('addFunds');
 };
 
+const increaseMoney = (req, res) =>{
+    //grab the current account from mongo
+
+    Account.AccountModel.findByUsername(req.session.account.username, (err, doc) => {
+        let account = doc;
+        account.funds += req.body.fundField;
+        
+        let saveMoney = account.save();
+        
+        saveMoney.then(() => {
+           res.json({message: 'success'}); 
+        });
+        
+        saveMoney.catch((err) => {
+            res.json({err});
+        });
+        
+        
+    });
+
+    
+};
+
+const getFunds = (req, res) => {
+    Account.AccountModel.findByUsername(req.session.Account.username, (err, doc) =>{
+        req.json({funds: doc.funds});
+    });
+};
+
 const blackJack = (req, res) => {
   res.render('blackJack');
 };
@@ -69,6 +98,8 @@ const signup = (request, response) => {
       salt,
       password: hash,
     };
+      
+      
 
     const newAccount = new Account.AccountModel(accountData);
     const savePromise = newAccount.save();
@@ -106,8 +137,10 @@ const getToken = (request, response) => {
 module.exports.loginPage = loginPage;
 module.exports.login = login;
 module.exports.logout = logout;
+module.exports.getFunds = getFunds;
 module.exports.addFunds = addFunds;
 module.exports.blackJack = blackJack;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
 module.exports.getToken = getToken;
+module.exports.increaseMoney = increaseMoney;

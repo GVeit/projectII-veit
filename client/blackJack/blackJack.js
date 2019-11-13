@@ -1,4 +1,5 @@
 // BLACKJACK WINDOW
+var userMoney = 0;
 const BlackJackWindow = (props) => {
     return (
         <div>It works!</div>
@@ -19,6 +20,22 @@ const getToken = () => {
     });
 };
 
+const getMoney = () =>{
+    sendAjax('Get', '/getFunds', null, (result) => {
+        userMoney = result.funds;
+        player.money = userMoney;
+        document.getElementById("player").innerHTML= "Your money: $" + userMoney;
+    });
+}
+
+
+const sendMoney = () => {
+    sendAjax('POST', '/addFunds',{
+        fundField: bet}, (result) => {
+            console.dir(result);
+        };
+    });
+}
 
 $(document).ready(function() {
     getToken();
@@ -27,12 +44,12 @@ $(document).ready(function() {
 
 
 const setup = function(csrf) {
-
+    
     createBlackJackWindow(csrf);
+    getMoney();
 
 };
 
-var userMoney = 100;
 
 //document.getElementById("confirm-purchase").addEventListener("click", function(){
 //  document.getElementById("credit").innerHTML = userMoney;
@@ -47,6 +64,7 @@ var player = {
     };
 var playerHand = '';
 
+
 var dealer = {
     cards: [],
     score: 0
@@ -54,7 +72,7 @@ var dealer = {
 var dealerHand = '';
 
 
-document.getElementById("player").innerHTML = "Your money: $" + player.money;
+//document.getElementById("player").innerHTML = "Your money: $" + player.money;
 document.getElementById("hit-button").disabled = true;
 document.getElementById("stand-button").disabled = true;
 
@@ -144,13 +162,14 @@ function bet(won) {
     if (won === true) {
 
         player.money += playerBet;
-
+        sendMoney(playerBet);
     }
     if (won === false) {
 
         player.money -= playerBet;
-        
+        sendMoney(-playerBet);
     }
+
 }
 
 // reset the game
