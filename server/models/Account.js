@@ -55,7 +55,7 @@ const validatePassword = (doc, password, callback) => {
 AccountSchema.statics.findByUsername = (name, callback) => {
   const search = {
     username: name,
-
+      
   };
 
   return AccountModel.findOne(search, callback);
