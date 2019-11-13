@@ -33,7 +33,7 @@ const sendMoney = () => {
     sendAjax('POST', '/addFunds',{
         fundField: bet}, (result) => {
             console.dir(result);
-        };
+        });
     });
 }
 
