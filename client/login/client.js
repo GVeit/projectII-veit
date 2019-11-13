@@ -77,14 +77,7 @@ const SignupWindow = (props) => {
     );
 };
 
-/*
-// BLACKJACK WINDOW
-const BlackJackWindow = (props) => {
-    return (
-        <div>It works!</div>
-    );
-};
-*/
+
 const createLoginWindow = (csrf) => {
     ReactDOM.render(
         <LoginWindow csrf={csrf} />,
@@ -99,16 +92,7 @@ const createSignupWindow = (csrf) => {
     );
 };
 
-/*
-// BLACKJACK WINDOW
-const createBlackJackWindow = (csrf) => {
-    ReactDOM.render(
-        <BlackJackWindow csrf={csrf} />,
-        document.querySelector("#game")
-    );
-};
 
-*/
 const setup = (csrf) => {
     const loginButton = document.querySelector("#loginButton");
     const signupButton = document.querySelector("#signupButton");

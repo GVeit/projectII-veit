@@ -23,6 +23,10 @@ const blackJack = (req, res) => {
   res.render('blackJack');
 };
 
+const addFunds = (req, res) => {
+  res.render('addFunds');
+};
+
 const login = (request, response) => {
   const req = request;
   const res = response;
@@ -108,6 +112,7 @@ module.exports.login = login;
 module.exports.logout = logout;
 module.exports.addFunds = addFunds;
 module.exports.blackJack = blackJack;
+module.exports.addFunds = addFunds;
 module.exports.signupPage = signupPage;
 module.exports.signup = signup;
 module.exports.getToken = getToken;
