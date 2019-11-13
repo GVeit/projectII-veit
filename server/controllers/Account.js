@@ -44,7 +44,7 @@ const increaseMoney = (req, res) =>{
 
 const getFunds = (req, res) => {
     Account.AccountModel.findByUsername(req.session.account.username, (err, doc) =>{
-        req.json({funds: doc.funds});
+        res.json({funds: doc.funds});
     });
 };
 
