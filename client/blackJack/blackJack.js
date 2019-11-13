@@ -34,7 +34,6 @@ const sendMoney = () => {
         fundField: bet}, (result) => {
             console.dir(result);
         });
-    });
 }
 
 $(document).ready(function() {
